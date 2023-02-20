@@ -1,0 +1,22 @@
+#include <iostream>
+#include <climits>  // for INT_MAX
+
+using namespace std;
+
+int findLowest(int numbers[], int n) {
+    int lowest = INT_MAX;  // initialize lowest to the largest possible integer
+    for (int i = 0; i < n; i++) {
+        if (numbers[i] < lowest) {
+            lowest = numbers[i];  // update lowest if a smaller number is found
+        }
+    }
+    return lowest;
+}
+
+int main() {
+    int numbers[] = {15 ,20 ,5 ,24 ,17};
+    int n = sizeof(numbers) / sizeof(numbers[0]);
+    int lowest = findLowest(numbers, n);
+    cout << "The lowest number is: " << lowest << endl;
+    return 0;
+}
